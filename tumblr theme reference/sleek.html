@@ -1,0 +1,494 @@
+<html>
+  <head>
+    
+    <!-- Theme base on Sleek by GridRing -->
+    
+    <title>{Title}</title>
+    
+    <meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    {block:Description}<meta name='description' content='{MetaDescription}'>{/block:Description}
+    
+    <!-- platforms -->
+    <meta name='text:Disqus Shortname' content='#'>
+    <meta name='text:Homepage' content='#'>
+    <meta name="text:Blog Address" content="#" />
+    <meta name='text:Facebook Username' content='#'>
+    <meta name='text:Twitter Username' content='#'>
+    <meta name='text:Instagram Username' content='#'>
+    <meta name='text:Soundcloud Username' content=''>
+    <meta name='text:Vimeo Username' content=''>
+    <meta name="text:YouTube Username" content="" />
+    
+    <!-- default variables -->
+    <meta name='color:Body Background' content='#ffffff'>
+    <meta name='color:Body Text' content='#777777'>
+    <meta name='color:Body Link' content='#000000'>
+    <meta name='color:Body Link Hover' content='#000000'>
+    <meta name='color:Post Border' content='#dddddd'>
+    <meta name='color:Header Background' content='#414040'>
+    <meta name='color:Header Border' content='#585858'>
+    <meta name='color:Header Link' content='#969696'>
+    <meta name='color:Header Link Hover' content='#ffffff'>
+    {block:IfGoogleWebFont}
+      <link href='http://fonts.googleapis.com/css?family={text:GoogleWebFontURL}' rel='stylesheet' type='text/css'>
+    {/block:IfGoogleWebFont}
+    <meta name='image:Header Logo' content=''>
+    <meta name='image:Body Image' content=''>
+    <meta name="text:GoogleWebFont" content="Gentium Book Basic"/>
+    <meta name="text:GoogleWebFontURL" content="Gentium+Book+Basic"/>
+    <meta name='if:Show Header' content='1'>
+    <meta name='if:Show Header Fixed' content='1'>
+    <meta name='if:Show Menu' content='1'>
+    <meta name='if:Show Social' content='1'>
+    <meta name='if:Show Archive' content='1'>
+    <meta name='if:Show Ask' content='1'>
+    <meta name='if:Show Shortlink' content='1'>
+    <meta name='if:Show Notes' content='1'>
+    <meta name='if:Show Share' content='1'>
+    <meta name='if:Show Reblogged' content='1'>
+    <meta name='if:Show Source' content='1'>
+    <meta name='if:Show Timestamp' content='1'>
+    <meta name='if:Show Tags' content='1'>
+    
+    <link rel='shortcut icon' href='{Favicon}'>
+    <link rel='alternate' type='application/rss+xml' title='RSS' href='{RSS}'>
+    
+    <!-- css -->
+    <link type='text/css' href='//static.tumblr.com/h63ve9g/3lUmlnkk2/bootstrap-combined.min.css' rel='stylesheet'>
+    <link type='text/css' href='//static.tumblr.com/h63ve9g/hFumlnkkg/jquery-ui.min.css' rel='stylesheet'>
+    <link type='text/css' href='//static.tumblr.com/h63ve9g/VQ7mm3qc8/sleek.css' rel='stylesheet'>
+    
+    <!-- js -->
+    <script type='application/javascript' src='//static.tumblr.com/h63ve9g/qgnmlnktv/jquery.min.js'></script>
+    <script type='application/javascript' src='//static.tumblr.com/h63ve9g/9Lkmlnks3/jquery-ui.min.js'></script>
+    <script type='text/javascript' src='//static.tumblr.com/h63ve9g/pl1mlnkob/jquery.cycle.min.js'></script>
+    <script type='text/javascript' src='//static.tumblr.com/h63ve9g/anVmm3qe6/sleek.js'></script>
+    
+    <script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-40492377-2']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+    
+    <style>
+      body {
+        background-color: {color:Body Background};
+        color: {color:Body Text};
+        font-family: '{text:GoogleWebFont}', Georgia, serif;
+      }
+      
+      body a:link {color: {color:Body Link};}
+      
+      body a:hover {color: {color:Body Link Hover};}
+      
+      header, nav, ul#social {
+        background-color: {color:Header Background};
+        border-color: {color:Header Border};
+        color: {color:Header Link};
+      }
+      
+      header a {color: {color:Header Link Hover};}
+      header a:link {color: {color:Header Link Hover};}
+      header a:hover {color: {color:Header Link};}
+      
+      .menu li a, nav a, ul#social a {color: {color:Header Link};}
+      .menu li a:hover, nav a:hover, ul#social a:hover {color: {color:Header Link Hover};}
+      ul#social {box-shadow: inset 0 1px 0 {color:Header Border};}
+      
+      #posts li.post {
+        border-color: {color:Post Border};
+        color: {color:Body Text};
+      }
+
+      #posts li.post a {color: {color:Body Link};}
+      #posts li.post a:hover {color: {color:Body Link Hover};}
+      #posts .post .chat .body .label {color:{color:Body Link};}
+      #posts .post .chat .body li {border-color: {color:Body Link};}
+      #posts .post .chat .body .line {border-color: {color:Post Border};}
+      #posts .post .meta .share {color: {color:Body Link};}
+      #posts .post .meta .share:hover {color: {color:Body Link Hover};}
+      #posts .post #disqus_thread {border-color: {color:Post Border};}
+      #posts .post .meta #notes {border-color: {color:Post Border};}
+      #posts .post .photoset .body .next {opacity: 1;}
+      #posts .post .photo .body {text-align: center;}
+      .middot {color: {color:Body Link};}
+      
+      .info {
+        margin: 20px 0 20px 0;
+        text-align: center!important;
+      }
+      
+      .info a {
+          transition: all .3s ease-in-out;
+          font-size: 12px;
+          font-weight: normal!important;
+          color: #000;
+      }
+      
+      info a:hover {color: #666!improtant;}
+      .info u {font-weight: bold!important;}
+
+      {CustomCSS}
+    </style>
+    
+    <style id='scss'></style>
+  </head>
+  
+  <body>
+    {block:IfShowHeader}
+      <header 
+      {block:IfShowHeaderFixed}
+      class='fixed'
+      {/block:IfShowHeaderFixed}>
+        <a href='/'>
+          {block:IfHeaderLogoImage}
+            <img src='{image:Header Logo}' class='logo' alt='{Title}'>
+          {/block:IfHeaderLogoImage}
+          {block:IfNotHeaderLogoImage}
+            {Title}
+          {/block:IfNotHeaderLogoImage}
+        </a>
+        {block:Description}
+          <p>{Description}</p>
+        {/block:Description}
+        {block:IfShowMenu}
+          <div class='guide'></div>
+          <div class='x'></div>
+        {/block:IfShowMenu}
+      </header>
+      
+      {block:IfShowMenu}
+        <nav {block:IfShowHeaderFixed}class='fixed'{/block:IfShowHeaderFixed}>
+          <ul class='menu'>
+            <li><a href='/'>home</a></li>
+            {block:IfShowArchive}
+              <li><a href='/archive'>archive</a></li>
+            {/block:IfShowArchive}
+            {block:IfShowAsk}
+              <li><a href='/ask'>ask</a></li>
+            {/block:IfShowAsk}
+            {block:HasPages}
+              {block:Pages}
+                <li><a href='{URL}'>{Label}</a></li>
+              {/block:Pages}
+            {/block:HasPages}
+          </ul><!--/.menu-->
+          
+          {block:IfShowSocial}
+
+            <ul id='social'>
+              {block:IfFacebookUsername}
+                <li><a href='//facebook.com/{text:Facebook Username}' class='entypo-facebook' target='_blank'></a></li>
+              {/block:IfFacebookUsername}
+              {block:IfTwitterUsername}
+                <li><a href='//twitter.com/{text:Twitter Username}' class='entypo-twitter' target='_blank'></a></li>
+              {/block:IfTwitterUsername}
+              {block:IfVimeoUsername}
+                <li><a href='//vimeo.com/{text:Vimeo Username}' class='entypo-vimeo' target='_blank'></a></li>
+              {/block:IfVimeoUsername}
+              {block:IfSoundCloudUsername}
+                <li><a href='//soundcloud.com/{text:Soundcloud Username}' class='entypo-cloud' target='_blank'></a></li>
+              {/block:IfSoundCloudUsername}
+            </ul><!--/.social-->
+          {block:IfShowSocial}
+        </nav>
+      {/block:IfShowMenu}
+    {block:IfShowHeader}
+    
+    <div id='container' {block:IfShowHeader}{block:IfShowHeaderFixed}class='fixed'{/block:IfShowHeaderFixed}{/block:IfShowHeader}>
+      <ul id='posts'>
+        {block:Posts}
+          <li class='post'>
+            {block:Text}
+              <div class='text'>
+                <div class='body'>
+                  {Body}
+                </div>
+                {block:Title}
+                  <div class='title'>
+                  <a href='{Permalink}'>{Title}</a>
+                  </div>
+                {/block:Title}
+              </div><!--/.text-->
+            {/block:Text}
+
+            {block:Photo}
+              <div class='photo'>
+                <div class='body'>
+                  <img src='{PhotoURL-500}' alt='{PhotoAlt}'>
+                </div>
+                {block:Caption}
+                  <div class='caption'>
+                    {Caption}
+                  </div>
+                {/block:Caption}
+              </div><!--/.photo-->
+            {/block:Photo}
+
+            {block:Panorama}
+              <div class='panorama'>
+                <div class='body'>
+                  {LinkOpenTag}
+                    <img src='{PhotoURL-Panorama}' alt='{PhotoAlt}'>
+                  {LinkCloseTag}
+                </div>
+
+                {block:Caption}
+                  <div class='casption'>
+                    {Caption}
+                  </div>
+                {/block:Caption}
+              </div><!--/.panorama-->
+            {/block:Panorama}
+
+            {block:Photoset}
+              <div class='photoset'>
+                <div class='body'>
+                  <div class='next'></div>
+                  <div class='slide'>
+                    {block:Photos}
+                      <img src='{PhotoURL-500}' class='photoset-img'>
+                    {/block:Photos}
+                  </div>
+                </div>
+
+                {block:Caption}
+                  <div class='caption'>
+                    {Caption}
+                  </div>
+                {/block:Caption}
+              </div><!--/.photoset-->
+            {/block:Photoset}
+
+            {block:Quote}
+              <div class='quote'>
+                <div class='body'>
+                  "{Quote}"
+                </div>
+                {block:Source}
+                  <div class='source'>
+                    &mdash; {Source}
+                  </div>
+                {/block:Source}
+              </div><!--/.quote-->
+            {/block:Quote}
+
+            {block:Link}
+              <div class='link'>
+                <div class='body'>
+                  <a href='{URL}' {Target}>{Name}</a>
+                </div>
+                {block:Description}
+                  <div class='description'>
+                    {Description}
+                  </div>
+                {/block:Description}
+              </div><!--/.link-->
+            {/block:Link}
+
+            {block:Chat}
+              <div class='chat'>
+                {block:Title}
+                  <div class='title'>
+                    <a href='{Permalink}'>{Title}</a>
+                  </div>
+                {/block:Title}
+
+                <div class='body'>
+                  <ul>
+                    {block:Lines}
+                      <li class='{Alt} user_{UserNumber}'>
+                        {block:Label}
+                          <span class='label'>{Label}</span>
+                        {/block:Label}
+                        <span class='line'>{Line}</span>
+                      </li>
+                    {/block:Lines}
+                  </ul>
+                </div>
+              </div><!--/.chat-->
+            {/block:Chat}
+
+            {block:Audio}
+              <div class='audio'>
+                <div class='body'>
+                  {block:AlbumArt}
+                    <img src='{AlbumArtURL}' class='album_art' alt='cover'>
+                  {/block:AlbumArt}
+                  {AudioPlayerWhite}
+                </div>
+
+                {block:Caption}
+                  <div class='caption'>
+                    {Caption}
+                  </div>
+                {/block:Caption}
+              </div><!--/.audio-->
+            {/block:Audio}
+
+            {block:Video}
+              <div class='video'>
+                <div class='body'>
+                  {Video-500}
+                </div>
+
+                {block:Caption}
+                  <div class='caption'>
+                    {Caption}
+                  </div>
+                {/block:Caption}
+              </div><!--/.video-->
+            {/block:Video}
+
+            <div class='meta'>
+              {block:IfShowTimestamp}
+                {block:Date}
+                  <div class='timestamp'>
+                    {Month} {DayOfMonth}, {Year}
+                  </div><!--/.timestamp-->
+                {/block:Date}
+              {/block:IfShowTimestamp}
+
+              {block:ContentSource}
+                {block:IfShowSource}
+                   <div class='content_source'>
+                     <a href='{SourceURL}'>
+                       via
+                     </a><span class='middot'></span>
+                   </div><!--/.content_source-->
+                {/block:IfShowSource}
+              {/block:ContentSource}
+
+              {block:IfShowTags}
+                {block:HasTags}
+                  <div class='tags'>
+                    <ul>
+                      {block:Tags}
+                        <li><a href='{TagURL}'>#{Tag}</a></li>
+                      {/block:Tags}
+                    </ul>
+                  </div><!--/.tags-->
+                {/block:HasTags}
+              {/block:IfShowTags}
+
+              {block:IfShowNotes}
+                {block:NoteCount}
+                  <div class='notes'>
+                    <a href='{Permalink}#notes'>
+                      notes
+                    </a><span class='middot'></span>
+                  </div><!--/.notes-->
+                {/block:NoteCount}
+              {/block:IfShowNotes}
+
+              {block:RebloggedFrom}
+                {block:IfShowReblogged}
+                   <div class='reblogged'>
+                     <a href='{ReblogRootURL}' title='{ReblogRootTitle}'>
+                       via
+                     </a><span class='middot'></span>
+                   </div><!--/.reblogged-->
+                {/block:IfShowReblogged}
+              {/block:RebloggedFrom}
+
+              {block:IfShowShortlink}
+                <a href='{ShortURL}' class='short-link'></a>
+              {/block:IfShowShortlink}
+
+              {block:IfDisqusShortname}
+                {block:IndexPage}
+                  <a class='dsq-comment-count' href='{Permalink}#disqus_thread'>comment</a>
+                  
+                  <script type='text/javascript'>
+                    var disqus_shortname = '{text:Disqus Shortname}';
+                    (function(){
+                      var s = document.createElement('script'); 
+                      s.async = true;
+                      s.type = 'text/javascript';
+                      s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+                    }());
+                  </script>
+                  
+                  <span class='middot'></span>
+                {/block:IndexPage}
+              {/block:IfDisqusShortname}
+
+              {block:IfShowShare}
+                <div class='share'>
+                  share
+                </div><!--/.share-->
+              {/block:IfShowShare}
+
+              <div class='social'>
+                <ul class='platforms'>
+                  <li class='facebook'><a href='//www.facebook.com/sharer/sharer.php?u={ShortURL}'>F</a></li>
+                  <li class='twitter'><a href='//twitter.com/share?url={ShortURL}'>T</a></li>
+                </ul>
+              </div><!--/.social-->
+
+              {block:Permalink}
+                {block:NoteCount}
+                  <div id='notes'>
+                    <span>{NoteCount} notes</span>
+                    <div id='body'>
+                      {PostNotes}
+                    </div>
+                  </div><!--/#notes-->
+                {/block:NoteCount}
+              {/block:Permalink}
+            </div><!--/.meta-->
+          {/block:Posts}
+          
+          {block:IfDisqusShortname}
+            {block:Permalink}
+              <div id='disqus_thread'></div>
+              
+              <script type='text/javascript'>
+                var disqus_shortname = '{text:Disqus Shortname}';
+                /* don't edit below this line */
+                (function(){
+                  var dsq = document.createElement('script'); 
+                  dsq.type = 'text/javascript'; 
+                  dsq.async = true;
+                  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+              </script>
+            {/block:Permalink}
+          {/block:IfDisqusShortname}
+        </li>
+      </ul><!--/#posts-->
+      <div class='top'></div>
+    </div><!--/#container-->
+    
+    <footer>
+      {block:Pagination}
+        <div class='pg'>
+          {block:PreviousPage}
+            <a href='{PreviousPage}' class='previous'></a>
+          {/block:PreviousPage}
+          
+          {block:PreviousPage}
+            {block:NextPage}
+              <span class='gap'></span>
+            {/block:NextPage}
+          {/block:PreviousPage}
+          
+          {block:NextPage}
+            <a href='{NextPage}' class='next'></a>
+          {/block:NextPage}
+        </div><!--/.pg-->
+      {/block:Pagination}
+      
+      <!-- <div class='info'><a href='//gridring.tumblr.com' title='Theme by GridRing' target='_blank'>Theme by <u>GridRing</u></a></div> -->
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<!--
+  Theme: simplyButton
+  Author: tricialing [http://tricialing.com]
+  For: Tumblr
+-->
+
+<html lang=en>
+  <head>
+    <title>{block:TagPage}{Tag} posts - {/block:TagPage} {block:SearchPage}{lang:Search results for SearchQuery} - {/block:SearchPage}{block:PostSummary}{PostSummary} - {/block:PostSummary}{Title}</title>
+
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+    
+    {block:Description}
+      <meta name='description' content='{MetaDescription}'>
+    {/block:Description}
+    <link rel="shortcut icon" href="{Favicon}">
+    <link rel="alternate" type="application/rss+xml" href="{RSS}">
+    <link href="http://static.tumblr.com/wgijwsy/k1Hm9ei8b/normalize.css" rel="stylesheet" type="text/css" />
+    <link type='text/css' href='//static.tumblr.com/h63ve9g/3lUmlnkk2/bootstrap-combined.min.css' rel='stylesheet'>
+
+    <!-- social -->
+    <meta name='text:Disqus Shortname' content='http://'>
+    <meta name='text:Homepage' content='http://'>
+    <meta name='text:Blog Address' content='#'>
+    <meta name='text:Facebook Username' content='#'>
+    <meta name='text:Twitter Username' content='#'>
+    <meta name='text:Instagram Username' content='#'>
+    <meta name='text:Soundcloud Username' content=''>
+    <meta name='text:Vimeo Username' content=''>
+    <meta name='text:YouTube Username' content='#'>
+
+    <!-- theme variable -->
+    <meta name="font:Title" content="Helvetica Neue"/>
+    <meta name="font:Body" content="Arial, Helvetica, sans-serif"/>
+    <meta name='color:Body Background' content='#ffffff'>
+    <meta name='color:Body Text' content='#777777'>
+    <meta name='color:Body Link' content='#000000'>
+    <meta name='color:Body Link Hover' content='#000000'>
+    <meta name='color:Post Border' content='#dddddd'>
+    <meta name='color:Header Background' content='#414040'>
+    <meta name='color:Header Border' content='#585858'>
+    <meta name='color:Header Link' content='#969696'>
+    <meta name='color:Header Link Hover' content='#ffffff'>
+    <meta name="text:GoogleWebFont" content="Gentium Book Basic">
+    <meta name="text:GoogleWebFontURL" content="Gentium+Book+Basic">
+    {block:IfGoogleWebFont}
+    <link href='http://fonts.googleapis.com/css?family={text:GoogleWebFontURL}' rel='stylesheet' type='text/css'>
+    {/block:IfGoogleWebFont}
+    <meta name='image:Header Logo' content=''>
+    <meta name='image:Body Image' content=''>
+        <link rel="shortcut icon" href="{Favicon}">
+    <link rel="apple-touch-icon" href="{PortraitURL-128}">
+
+    <style>
+    @import url(//weloveiconfonts.com/api/?family=entypo|fontawesome);
+    
+    body{
+      color: {color:Text};
+      background: {color:Background};
+      font-family: {font:Title};
+      font-size: 100%;
+    }
+
+    .wrap {
+      width: 90%;
+      padding: 0 5%;
+      max-width: 48em;
+      margin: 0 auto;
+      overflow: hidden
+    }
+
+    header {
+      height: 20;
+      padding: 30px 0 30px 0;
+      position: relative;
+      background: {color:Header Background};
+      text-align: center;
+      font: normal 50px 'Arial';
+    }
+
+    .content{
+      font-family: {font:Body};
+    }
+
+    a {
+      color: {color:Body Link};
+    }
+
+    nav {
+      padding: 0;
+      display: none;
+      position: relative;
+      background: #414040;
+      border-top: 1px solid #585858;
+      text-align: center;
+    }
+    
+    nav a {
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      -ms-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      /*color: #969696;*/
+    }
+
+    nav a:hover {
+      text-decoration: none;
+      /*color: #fff;*/
+    }
+
+    nav #social {
+      margin: 0;
+      padding: 0;
+      display: block;
+      list-style: none;
+      box-shadow: inset 0 1px 0 #585858;
+    }
+
+    nav #social li {
+      width: 50px;
+      height: 1px;
+      margin: 30px 0 40px 0;
+      display: inline-block;
+    }
+
+    nav #social a {
+      width: 100%;
+      font-size: 17px;
+      display: inline-block;
+    }
+
+    nav #social a:hover {
+      margin-top:-2px;
+      font-size: 26px;
+    }
+
+    p {
+      font: normal 12px 'Arial';
+      line-height: 1.8em;
+      /*color: #777;*/
+    }
+
+    article {
+      padding: 2%;
+    }
+
+    blockquote {
+      margin-left: 10px;
+      padding-left: 20px;
+      border: 0;
+      background: url(//static.tumblr.com/khq1ksy/augmlxsei/sprite.png) -93px -9px no-repeat;
+    }
+
+    blockquote p {
+      font: normal 12px 'Arial';
+    }
+
+    ul, lo { 
+      margin-left: 0;
+      list-style: none;
+    }
+
+    a { text-decoration: none; }
+
+    a:hover { text-decoration: underline; }
+
+
+
+
+      {CustomCSS}
+    </style>
+  </head>
+  <body>
+    <header>
+      <!--Details: portrait, title and description-->
+      <div id="site_name">
+          <h1><a href="/" title="{lang:Home}">{Title}</a></h1>
+          {block:Description}
+            <p>{Description}</p>
+          {block:Description}
+      </div>
+          <!--Navigation-->
+          <nav>
+            <ul id="social">
+              {block:IfFacebookUsername}
+                <li>
+                  <a href="//facebook.com/{text:Facebook Username}" class='entypo-facebook' target="_blank" id="facebook"></a>
+                </li>
+              {/block:IfFacebookUsername}
+            </ul>
+          </nav>
+          <nav>
+              <ul>
+                  {block:HasPages}
+                  {block:Pages}
+                  <li> <a href="{URL}">{Label}</a></li>
+                  {/block:Pages}
+                  {/block:HasPages}
+                  {block:SubmissionsEnabled}
+                  <li> <a href="/submit">{SubmitLabel}</a></li>
+                  {/block:SubmissionsEnabled}
+                  {block:AskEnabled}
+                  <li> <a href="/ask">{AskLabel}</a></li>
+                  {/block:AskEnabled}
+              </ul>
+          </nav>
+      </header>
+    <div class="content wrap">
+      {block:Posts}
+      <article>
+          <!--Unique code for each post type-->
+          {block:Text}
+          <div class="text">
+              {Body}
+              {block:Title}<h1 class="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+          {/block:Text}
+
+          {block:Photo}
+          <div class="photo">
+              {LinkOpenTag}<img src="{PhotoURL-500}" alt="{PhotoAlt}" />{LinkCloseTag}
+              {block:Caption}{Caption}{/block:Caption}
+          {/block:Photo}
+
+          {block:Photoset}
+          <div class="photoset">
+              {Photoset-500}
+              {block:Caption}{Caption}{/block:Caption}
+          {/block:Photoset}
+          
+          {block:Panorama}
+          <div class="panorama">
+          {LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />{LinkCloseTag}
+
+          {block:Caption}{Caption}{/block:Caption}
+          {/block:Panorama}
+
+          {block:Quote}
+          <div class="quote">
+              <blockquote>{Quote}</blockquote>
+              {block:Source}<cite> {Source} </cite>{/block:Source}
+          {/block:Quote}
+
+          {block:Link}
+          <div class="link">
+              <h1 class="title"><a href="{URL}">{Name}</a></h1>
+              {block:Description}{Description}{/block:Description}
+          {/block:Link}
+
+          {block:Chat}
+          <div class="chat">
+              <ul>
+                  {block:Lines}<li class="{Alt}">{block:Label}<span class="label">{Label}</span>{/block:Label}<p> {Line} </p></li>{/block:Lines}
+              </ul>
+          {/block:Chat}
+
+          {block:Audio}
+          <div class="audio">
+              {block:TrackName}<h1 class="title"><a href="{Permalink}">{TrackName}</a></h1>{/block:TrackName}
+              {block:AlbumArt}<img src="{AlbumArtURL}" width="500" height="500"/>{/block:AlbumArt}
+              <div class="player">{AudioPlayerBlack}</div>
+              {block:Caption}{Caption}{/block:Caption}
+          {/block:Audio}
+
+          {block:Video}
+          <div class="video">
+              <div class="video-player">{Video-500}</div>
+              {block:Caption}{Caption}{/block:Caption}
+          {/block:Video}
+
+          {block:Answer}
+          <div class="answer">
+              <h1 class="title">{Question}</h1>
+              <div class="user">
+                  <img src="{AskerPortraitURL-96}"/>
+                  <p>{Asker}</p>
+              </div>
+              {Answer}
+          {/block:Answer}
+          </div>
+          {block:Date}
+              <footer>
+                <ul class="small">
+                  <li>{block:IfShowTimestamp}
+                    {block:Date}
+                      <div class='timestamp'>
+                        {Month} {DayOfMonth}, {Year}
+                      </div><!--/.timestamp-->
+                    {/block:Date}
+                  </li>{/block:IfShowTimestamp}
+                  <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</a></li>
+                  {block:RebloggedFrom}<li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>{/block:RebloggedFrom}
+                  {block:ContentSource}
+                    <li class="source">via <a href="{SourceURL}">{SourceTitle}</a></li>
+                  {/block:ContentSource}
+                </ul>
+                
+                {block:PermalinkPage}
+                    {block:HasTags}
+                        <ul class="tags">
+                          {block:Tags}
+                            <li>
+                              <a href="{TagURL}">#{Tag}</a>
+                            </li>
+                          {/block:Tags}
+                        </ul>
+                    {/block:HasTags}      
+                {/block:PermalinkPage}
+                              
+              </footer>
+            {/block:Date}
+      </article>
+      {/block:Posts}
+      <!--Close of article-->
+    </div>
+    {block:Pagination}
+    <nav id="pagination">
+        <ul>
+            {block:PreviousPage}<li><a href="{PreviousPage}">Previous page</a></li>{/block:PreviousPage}
+            {block:NextPage}<li><a href="{NextPage}">Next page</a></li>{/block:NextPage}
+        </ul>
+    </nav>
+    {/block:Pagination}
+  </body>
+</html>
