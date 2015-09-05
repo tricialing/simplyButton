@@ -158,16 +158,31 @@
     }
 
     ul, lo { 
-      margin-left: 0;
-      list-style: none;
+      /*margin-left: 0;*/
     }
 
-    a { text-decoration: none; }
+    footer li {
+        list-style: none;
+    }
 
-    a:hover { text-decoration: underline; }
+    a { 
+      text-decoration: underline;
+    }
 
+    a:hover { text-decoration: none; }
 
+    #site_name a{
+      text-decoration: none;
+    } 
+    .timestamp {
+      color: lightgrey;
+      text-align: right;
+    }
 
+    .small {
+      font-size: 1em;
+            text-align: right;
+    }
 
       {CustomCSS}
     </style>
@@ -213,8 +228,14 @@
           <!--Unique code for each post type-->
           {block:Text}
           <div class="text">
+              
+              {block:Title}
+                <h3 class="title">
+                  <a href="{Permalink}">{Title}</a>
+                </h3>
+              {/block:Title}
               {Body}
-              {block:Title}<h1 class="title"><a href="{Permalink}">{Title}</a></h1>{/block:Title}
+
           {/block:Text}
 
           {block:Photo}
@@ -282,14 +303,18 @@
           {block:Date}
               <footer>
                 <ul class="small">
-                  <li>{block:IfShowTimestamp}
+                  <li><!-- {block:IfShowTimestamp} -->
                     {block:Date}
                       <div class='timestamp'>
                         {Month} {DayOfMonth}, {Year}
                       </div><!--/.timestamp-->
                     {/block:Date}
-                  </li>{/block:IfShowTimestamp}
-                  <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}">{TimeAgo}</a></li>
+                  </li><!-- {/block:IfShowTimestamp} -->
+                  <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}" class="timestamp">{TimeAgo}</a>{block:Date}</li>
+                      <li class='timestamp'>
+                        {Month} {DayOfMonth}, {Year}
+                      </li><!--/.timestamp-->
+                    {/block:Date}
                   {block:RebloggedFrom}<li class="source"> (reblogged from <a href="{ReblogParentURL}">{ReblogParentName}</a>)</li>{/block:RebloggedFrom}
                   {block:ContentSource}
                     <li class="source">via <a href="{SourceURL}">{SourceTitle}</a></li>
@@ -311,6 +336,7 @@
               </footer>
             {/block:Date}
       </article>
+
       {/block:Posts}
       <!--Close of article-->
     </div>
