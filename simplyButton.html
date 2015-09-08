@@ -143,11 +143,12 @@
     }
     
     ul {
-        padding-bottom: 5%;
+        padding-bottom: 3%;
+        list-style: square outside none
     }
 
     article {
-      padding: 2%;
+      padding-top: 7%;
     }
 
     blockquote {
@@ -183,11 +184,16 @@
     .timestamp {
       color: lightgrey;
       text-align: right;
+      font-size: 0.8em;
     }
 
     .small {
-      font-size: 1em;
-            text-align: right;
+      font-size: 0.8em;
+      text-align: right;
+    }
+    
+    h3{
+        padding-left: 3%;
     }
 
       {CustomCSS}
@@ -308,16 +314,16 @@
           </div>
           {block:Date}
               <footer>
-                <ul class="small">
+                <ul class="small timetamp">
                   <li><!-- {block:IfShowTimestamp} -->
                     {block:Date}
-                      <div class='timestamp'>
+                      <div >
                         {Month} {DayOfMonth}, {Year}
                       </div><!--/.timestamp-->
                     {/block:Date}
                   </li><!-- {/block:IfShowTimestamp} -->
-                  <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}" class="timestamp">{TimeAgo}</a>{block:Date}</li>
-                      <li class='timestamp'>
+                  <li><a href="{Permalink}" title="{DayOfWeek}, {DayOfMonth} {Month} {Year}, {24Hour}:{Minutes}:{Seconds}" class="small timestamp">{TimeAgo}</a>{block:Date}</li>
+                      <li class='small timestamp'>
                         {Month} {DayOfMonth}, {Year}
                       </li><!--/.timestamp-->
                     {/block:Date}
@@ -342,7 +348,6 @@
               </footer>
             {/block:Date}
       </article>
-
       {/block:Posts}
       <!--Close of article-->
     </div>
